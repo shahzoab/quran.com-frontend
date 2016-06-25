@@ -194,6 +194,18 @@ export default class Surah extends Component {
     }
   }
 
+  getLast() {
+    const { ayahIds } = this.props;
+
+    return [...ayahIds][[...ayahIds].length - 1];
+  }
+
+  getFirst() {
+    const { ayahIds } = this.props;
+
+    return [...ayahIds][0];
+  }
+
   handleOptionChange = (payload) => {
     const { setOption, loadAyahs, surah, ayahIds, options } = this.props; // eslint-disable-line no-shadow max-len
     const from = ayahIds.first();
@@ -271,18 +283,6 @@ export default class Surah extends Component {
     }
 
     return false;
-  }
-
-  getLast() {
-    const { ayahIds } = this.props;
-
-    return [...ayahIds][[...ayahIds].length - 1];
-  }
-
-  getFirst() {
-    const { ayahIds } = this.props;
-
-    return [...ayahIds][0];
   }
 
   title() {
