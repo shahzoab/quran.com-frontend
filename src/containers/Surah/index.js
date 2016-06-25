@@ -207,7 +207,13 @@ export default class Surah extends Component {
   }
 
   handleOptionChange = (payload) => {
-    const { setOption, loadAyahs, surah, ayahIds, options } = this.props; // eslint-disable-line no-shadow max-len
+    const {
+      setOption, // eslint-disable-line no-shadow
+      loadAyahs, // eslint-disable-line no-shadow
+      surah,
+      ayahIds,
+      options
+    } = this.props;
     const from = ayahIds.first();
     const to = ayahIds.last();
 
@@ -261,7 +267,13 @@ export default class Surah extends Component {
   }
 
   handleLazyLoadAyahs = (callback) => {
-    const { loadAyahs, ayahIds, surah, isEndOfSurah, options } = this.props; // eslint-disable-line no-shadow max-len
+    const {
+      loadAyahs, // eslint-disable-line no-shadow
+      ayahIds,
+      surah,
+      isEndOfSurah,
+      options
+    } = this.props;
     const range = [ayahIds.first(), ayahIds.last()];
 
     let size = 10;
