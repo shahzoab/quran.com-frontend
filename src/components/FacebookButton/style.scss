@@ -1,0 +1,14 @@
+$fb-color: #3b5998;
+
+.button{
+  background: $fb-color;
+  color: #fff;
+
+  &:hover{
+    color: #fff;
+    background: lighten($fb-color, 10%);
+  }
+}
+.icon{
+  padding-right: 15px;
+}

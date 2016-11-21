@@ -101,8 +101,7 @@ export default class Ayah extends Component {
               className={`${styles.translation} translation`}
               key={index}
             >
-              <h2 className="text-translation times-new">
-                <small>
+              <h4 className="montserrat">
                   <a
                     className="pointer"
                     onClick={() => mediaActions.setMedia(content)}
@@ -113,8 +112,7 @@ export default class Ayah extends Component {
                   >
                     Watch lecture by {content.resource.name}
                   </a>
-                </small>
-              </h2>
+              </h4>
             </div>
           ))
         }

@@ -1,9 +1,12 @@
 @import '../../../styles/variables.scss';
+$padding-between-icon-and-text: 7px;
+$transition-timing: 0.5s;
+
 
 .container{
   margin: 0px;
   width: 100%;
-  margin-left: 15px;
+  margin-left: 0px;
   display: inline-block;
 }
 .verticalAlign{
@@ -12,4 +15,35 @@
 .ornament{
   height: $navbar-height;
   opacity: 0.15;
+}
+.navbar-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline;
+  float: none;
+}
+.previous,
+.next{
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.5;
+  transition: opacity $transition-timing;
+  &:hover{
+    opacity: 1;
+  }
+  i {
+    // font-size: 20px;
+    display: inline-block;
+    transform: translateY(5%);
+  }
+}
+.previous{
+  i{
+    padding-right: $padding-between-icon-and-text;
+  }
+}
+.next{
+  i{
+    padding-left: $padding-between-icon-and-text;
+  }
 }

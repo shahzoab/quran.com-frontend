@@ -48,8 +48,7 @@ export default class TooltipDropdown extends Component {
     return (
       <OverlayTrigger trigger="click" placement="bottom" overlay={this.renderPopup()} rootClose>
         <a
-          href="#"
-          className="text-color"
+          className="text-color pointer"
           data-metrics-event-name="TooltipDropdown"
         >
           Tooltip

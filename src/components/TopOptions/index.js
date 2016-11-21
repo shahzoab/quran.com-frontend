@@ -1,18 +1,20 @@
 import React, { PropTypes } from 'react';
 
-import {Row, Col} from 'react-bootstrap/lib';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 import InformationToggle from 'components/InformationToggle';
 import FontSizeDropdown from 'components/FontSizeDropdown';
 import TooltipDropdown from 'components/TooltipDropdown';
 import ReadingModeToggle from 'components/ReadingModeToggle';
-import Title from 'containers/Surah/Title';
+// import Title from 'containers/Surah/Title';
 import Share from 'components/Share';
 
 const TopOptions = ({options, surah, actions}) => (
   <Row>
     <Col md={6} className="hidden-xs hidden-sm">
-      <Title surah={surah} />
+      {/* Don't need for now. */}
+      {/* <Title surah={surah} /> */}
     </Col>
     <Col md={6} className="text-right">
       <ul className="list-inline">

@@ -433,7 +433,7 @@ class Surah extends Component {
         >
           {this.renderSidebar()}
         </Sidebar>
-        <div className={`container-fluid ${style['surah-container']}`}>
+        <div className={`container-fluid ${style.container}`}>
           <Row>
             <SurahInfo
               surah={surah}

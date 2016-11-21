@@ -18,6 +18,10 @@ $width: 20%;
 
   @media(max-width: $screen-sm) {
     width: 100% - $width;
+
+    &.open{
+      right: $width !important;
+    }
   }
 
   &.open{

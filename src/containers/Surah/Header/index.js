@@ -19,7 +19,7 @@ const SurahHeader = ({ surah, handleToggleSidebar, children }) => {
     <Navbar className="montserrat surah" fixedTop fluid>
       <Header>
         <Row>
-          <Col xs={1}>
+          <Col xs={2}>
             <button type="button" className="navbar-toggle collapsed" onClick={handleToggleSidebar}>
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
@@ -27,7 +27,7 @@ const SurahHeader = ({ surah, handleToggleSidebar, children }) => {
               <span className="icon-bar"></span>
             </button>
           </Col>
-          <Col xs={10}>
+          <Col xs={8}>
             <ul className={`list-inline ${styles.container} text-center`}>
               <li className={styles.verticalAlign}>
                 {/* <img
@@ -35,41 +35,35 @@ const SurahHeader = ({ surah, handleToggleSidebar, children }) => {
                   className={`${styles.ornament} pull-left hidden-xs hidden-sm`}
                   alt="Ornament left"
                 /> */}
-                {
-                  surah.id > 1 &&
-                    <Link
-                      data-metrics-event-name="Title:PreviousSurah"
-                      className="navbar-text previous-chapter"
-                      to={`/${surah.id - 1}`}
-                    >
-                      <i
-                        data-metrics-event-name="Title:PreviousSurah"
-                        className="ss-icon ss-navigateleft"
-                      />
-                      <span className="hidden-xs hidden-sm"> PREVIOUS SURAH</span>
-                    </Link>
-                }
+                <Link
+                  data-metrics-event-name="Title:PreviousSurah"
+                  className={`navbar-text ${styles.previous} ${!(surah.id > 1) && 'invisible'}`}
+                  to={`/${surah.id - 1}`}
+                >
+                  <i
+                    data-metrics-event-name="Title:PreviousSurah"
+                    className="ss-icon ss-navigateleft"
+                  />
+                  <span className="hidden-xs hidden-sm"> PREVIOUS SURAH</span>
+                </Link>
               </li>
               <li className={styles.verticalAlign}>
                 {
                   surah &&
-                    <p className="navbar-text text-uppercase surah-name">
-                      {surah.name.simple} ({surah.name.english}) - سورة {surah.name.arabic}
+                    <p className="navbar-text text-uppercase">
+                      {surah.name.simple} <span className="hidden-xs hidden-sm">({surah.name.english}) - سورة {surah.name.arabic}</span>
                     </p>
                 }
               </li>
               <li className={styles.verticalAlign}>
-                {
-                  surah.id < 114 &&
-                    <Link
-                      data-metrics-event-name="Title:NextSurah"
-                      className="navbar-text next-chapter"
-                      to={`/${surah.id + 1}`}
-                    >
-                      <span className="hidden-xs hidden-sm">NEXT SURAH </span>
-                      <i data-metrics-event-name="Title:NextSurah" className="ss-icon ss-navigateright" />
-                    </Link>
-                }
+                <Link
+                  data-metrics-event-name="Title:NextSurah"
+                  className={`navbar-text ${styles.next} ${!(surah.id < 114) && 'invisible'}`}
+                  to={`/${surah.id + 1}`}
+                >
+                  <span className="hidden-xs hidden-sm">NEXT SURAH </span>
+                  <i data-metrics-event-name="Title:NextSurah" className="ss-icon ss-navigateright" />
+                </Link>
                 {/* <img
                   src={ornamentRight}
                   className={`${styles.ornament} hidden-xs hidden-sm`}

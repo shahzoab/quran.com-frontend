@@ -5,11 +5,9 @@ import { facebook } from 'redux/actions/auth';
 
 import config from 'config';
 
-@connect(
-  null,
-  { facebook, push }
-)
-export default class FacebookLogin extends Component {
+const styles = require('./style.scss');
+
+class FacebookButton extends Component {
   static propTypes = {
     callback: PropTypes.func.isRequired,
     appId: PropTypes.string.isRequired,
@@ -97,10 +95,10 @@ export default class FacebookLogin extends Component {
     return (
       <div>
         <button
-          className={`${this.props.cssClass}${this.props.size}`}
+          className={`${this.props.cssClass}${this.props.size} ${styles.button}`}
           onClick={this.handleClick}
         >
-          {this.props.icon && <i className={`margin-md-right fa ${this.props.icon}`} />}
+          {this.props.icon && <i className={`fa ${this.props.icon} ${styles.icon}`} />}
           {this.props.textButton}
         </button>
         <div id="fb-root"></div>
@@ -108,3 +106,8 @@ export default class FacebookLogin extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { facebook, push }
+)(FacebookButton);
