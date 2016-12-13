@@ -6,16 +6,15 @@ import InformationToggle from 'components/InformationToggle';
 import FontSizeDropdown from 'components/FontSizeDropdown';
 import TooltipDropdown from 'components/TooltipDropdown';
 import ReadingModeToggle from 'components/ReadingModeToggle';
-import NightModeToggle from 'components/NightModeToggle'
 import Title from 'containers/Surah/Title';
 import Share from 'components/Share';
 
 const TopOptions = ({options, surah, actions}) => (
   <Row>
-    <Col md={4} className="hidden-xs hidden-sm">
+    <Col md={6} className="hidden-xs hidden-sm">
       <Title surah={surah} />
     </Col>
-    <Col md={8} className="text-right">
+    <Col md={6} className="text-right">
       <ul className="list-inline">
         <li>
           <InformationToggle
@@ -42,13 +41,6 @@ const TopOptions = ({options, surah, actions}) => (
           <ReadingModeToggle
             isToggled={options.isReadingMode}
             onReadingModeToggle={actions.options.toggleReadingMode}
-          />
-        </li>
-        <li>|</li>
-        <li>
-          <NightModeToggle
-            isNightMode={options.isNightMode}
-            onToggle={actions.options.setOption}
           />
         </li>
         <li><Share surah={surah} /></li>

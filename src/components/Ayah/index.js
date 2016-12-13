@@ -294,7 +294,8 @@ export default class Ayah extends Component {
 
   render() {
     const { ayah, currentAyah } = this.props;
-    const className = ayah.ayahKey === currentAyah ? 'highlight' : "";
+    const currentIndex = parseInt(currentAyah.split(":")[1], 10);
+    const className = ayah.ayahIndex === currentIndex ? styles.highlight : "";
     debug('component:Ayah', `Render ${this.props.ayah.ayahNum}`);
 
     return (
